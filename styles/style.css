@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -48,4 +49,51 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  width: 1140px;
+  height: 500px;
+  margin: 133px 30px 0px 30px;
+  align-items: end;
+  justify-content: space-between;
+  
+}
+
+.result {
+  width: 711px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  width: 399px;
+  overflow: hidden;
+  
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald-bold", Arial, sans-serif;
+  justify-content: space-between;
+  font-size: 75px;
+  font-weight: bold;
+  line-height: 94%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+}
+
+.content__list-container {
+  display: flex;
+  flex-direction: column;
+  width: 399px;
+  height: 298px;
+  overflow: scroll;
 }
