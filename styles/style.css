@@ -14,7 +14,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   justify-content: center;
@@ -95,6 +95,7 @@ ol {
 
 .content__list-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 399px;
   height: 298px;
@@ -116,7 +117,7 @@ ol {
 
 .search-form__fieldset {
   border: none;
-  width: 32%;
+  width: 33%;
 }
 
 .search-form__fieldset-title {
@@ -131,6 +132,10 @@ ol {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   color: #fff;
+  cursor: text;
+  font-size: 18px;
+  width: 100%;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
 }
 
 .search-form__textfield:hover{
@@ -153,6 +158,7 @@ ol {
 .search-form__label {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .search-form__label:hover {
@@ -194,6 +200,8 @@ ol {
 }
 
 .result__video-container {
+  display: block;
+  position: relative;
   margin-bottom: 16px;
   width: 100%;
   height: 100%;
@@ -235,13 +243,14 @@ ol {
 }
 
 .content__video-card-description-container {
-  width: 52%;
+  width: 50%;
 }
 
 .content__video-card-description {
 
   display: -webkit-box;
   -webkit-line-clamp: 4; 
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 
@@ -252,9 +261,30 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__list-item {
+  padding: 3px 3px;
 }
 
 .visually-hidden {
@@ -267,4 +297,34 @@ ol {
   white-space: nowrap;
 }
 
+.button {
+  border: 1px solid #fff;
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', 'Arial', sans-serif;
+  background-color: transparent;
+  cursor: pointer;
+}
 
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+}
