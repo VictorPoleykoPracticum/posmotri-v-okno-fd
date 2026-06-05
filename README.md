@@ -1,1 +1,1 @@
-https://github.com/username/posmotri-v-okno-fd
+https://github.com/VictorPoleykoPracticum/posmotri-v-okno-fd
