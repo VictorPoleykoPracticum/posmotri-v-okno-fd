@@ -259,7 +259,7 @@ ol {
   padding-left: 5px;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -279,7 +279,8 @@ ol {
   opacity: 0;
 }
 
-.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox[type="checkbox"]:checked
+  + .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
