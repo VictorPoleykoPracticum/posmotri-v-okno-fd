@@ -66,7 +66,6 @@ ol {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   margin-left: 30px;
   padding-bottom: 0px;
 }
@@ -115,9 +114,8 @@ ol {
 .content__video-card-thumbnail {
   width: 50%;
   object-fit: cover;
-  object-position: top right;
+  object-position: center;
 }
-
 
 .content__video-card-title {
   font-family: "Oswald", Arial, sans-serif;
@@ -129,11 +127,6 @@ ol {
   text-overflow: ellipsis;
   line-height: 30px;
 }
-
-/*Шрифт в описании карточки явно не Fira Sans Condensed, а Arial, судя по макету в Figma.
-Однако в свойствах там указано что там fira sans размеров 16,2. Такой и поставил.
-Но он не совпадает с скриншотом в макете.*/
-
 
 .content__video-card-description-container {
   width: 50%;
@@ -150,6 +143,12 @@ ol {
   font-weight: normal;
   line-height: 26px;
   font-family: "Fira Sans Condensed", "Arial", sans-serif;
+  word-spacing: 60%;
+  /*Шрифт в описании карточки явно не Fira Sans Condensed, 
+  а Arial, судя по макету в Figma.
+  Однако в свойствах макета указано что там Fira Sans Condensed размера 16,2px. 
+  Такой и поставил. Но он не совпадает с скриншотом в макете.
+  Или Figma/Chrome неправильно отображает шрифты*/
 }
 
 .content__card-link {
@@ -179,7 +178,6 @@ ol {
   padding: 3px 3px;
 }
 
-
 .result__video-container {
   display: flex;
   position: relative;
@@ -190,15 +188,14 @@ ol {
 .result__video {
   position: relative;
   width: 100%;
-  object-fit:fill;
+  object-fit: fill;
   padding-bottom: 16px;
+  object-position: center;
 }
-
 
 .search-form {
   display: flex;
   width: 711px;
-  height: 54px;
   align-items: start;
   justify-content: space-between;
 }
@@ -206,7 +203,7 @@ ol {
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
-  justify-content:flex-end;
+  justify-content: flex-end;
   border: none;
   width: 224px;
   padding: 0;
@@ -216,8 +213,7 @@ ol {
   display: block;
   font-weight: normal;
   font-size: 18px;
-  padding-top: 0px;
-  padding-bottom: 7px;
+  padding-bottom: 6px;
 }
 
 .search-form__time-fieldset {
@@ -236,8 +232,7 @@ ol {
   font-weight: 400;
   width: 100%;
   font-family: "Fira Sans Condensed", "Arial", sans-serif;
-  padding: 0;
-  
+  word-spacing: -10%;
 }
 
 .search-form__textfield:hover {
@@ -260,13 +255,16 @@ ol {
   cursor: pointer;
 }
 
+.search-form__label-text {
+  padding-left: 5px;
+}
+
 .search-form__label-text:hover {
   text-decoration: underline;
 }
 
 .search-form__pseudo-checkbox {
   padding: 1px;
-  margin-right: 5px;
   height: 19px;
   width: 19px;
   outline: 1px solid #fff;
@@ -281,6 +279,10 @@ ol {
   opacity: 0;
 }
 
+.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
 .search-form__submit-button {
   display: flex;
   align-self: flex-end;
@@ -289,7 +291,6 @@ ol {
   width: 194px;
   height: 34px;
 }
-
 
 .visually-hidden {
   position: absolute;
@@ -301,13 +302,10 @@ ol {
   white-space: nowrap;
 }
 
-.search-form__pseudo-checkbox[type="checkbox"]:checked {
-  opacity: 1;
-}
-
 .button {
   border: 1px solid #fff;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 700;
   color: #fff;
   font-family: "Fira Sans Condensed", "Arial", sans-serif;
   background-color: transparent;
@@ -326,15 +324,7 @@ ol {
   outline: 1px solid #fff;
 }
 
-
 .more-button {
   width: 100%;
   height: 34px;
 }
-
-/*
-Я сознательно заливаю сюда сыроватый вариант. 
-Завтра выходной и я не могу рассчитывать,
-что ревью будет в середине дня. Хочется за завтрашний день
-успеть исправить найденные ошибки. Дедлайн очень близко.
-*/
