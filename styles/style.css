@@ -56,7 +56,6 @@ ol {
 .content {
   display: flex;
   width: 1140px;
-  min-height: 500px;
   margin: 0 30px;
   align-items: end;
   justify-content: space-between;
@@ -69,6 +68,7 @@ ol {
   height: 100%;
   overflow: hidden;
   margin-left: 30px;
+  padding-bottom: 0px;
 }
 
 .content__accent {
@@ -85,7 +85,7 @@ ol {
   line-height: 94%;
   letter-spacing: 0;
   text-transform: uppercase;
-  margin-bottom: 26px;
+  margin-bottom: 19px;
 }
 
 .content__list-container {
@@ -93,110 +93,15 @@ ol {
   position: relative;
   flex-direction: column;
   width: 399px;
-  height: 298px;
+  height: 301px;
   overflow-y: scroll;
   gap: 30px;
-}
-
-.search-form {
-  display: flex;
-  width: 711px;
-  height: 54px;
-  align-items: start;
-  justify-content: space-between;
-}
-
-.search-form__fieldset {
-  border: none;
-  width: 33%;
-}
-
-.search-form__fieldset-title {
-  font-weight: normal;
-  font-size: 18px;
-}
-
-.search-form__textfield {
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  color: #fff;
-  cursor: text;
-  font-size: 18px;
-  width: 100%;
-  font-family: "Fira Sans Condensed", "Arial", sans-serif;
-}
-
-.search-form__textfield:hover {
-  text-decoration: none;
-}
-
-.search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
-  width: fit-content;
-}
-
-.search-form__textfield::placeholder {
-  color: rgb(255 255 255 / 0.7);
-}
-
-.search-form__label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.search-form__label:hover {
-  text-decoration: underline;
-}
-
-.search-form__pseudo-checkbox {
-  padding: 1px;
-  margin-right: 5px;
-  height: 19px;
-  width: 19px;
-  outline: 1px solid #fff;
-}
-
-.search-form__pseudo-checkbox::after {
-  content: "";
-  display: block;
-  background-color: #fff;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-.search-form__pseudo-checkbox[type="checkbox"]:checked {
-  opacity: 1;
-}
-
-.result {
-  width: 711px;
-  margin-top: 78px;
-  min-height: 456px;
-}
-
-.result__video-container {
-  display: block;
-  position: relative;
-  margin-bottom: 16px;
-  width: 100%;
-  height: 100%;
-}
-
-.result__video {
-  width: 100%;
-  object-fit: cover;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 
 .content__video-card {
@@ -208,10 +113,11 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 100%;
-  object-fit: contain;
+  width: 50%;
+  object-fit: cover;
   object-position: top right;
 }
+
 
 .content__video-card-title {
   font-family: "Oswald", Arial, sans-serif;
@@ -221,10 +127,17 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 30px;
 }
+
+/*Шрифт в описании карточки явно не Fira Sans Condensed, а Arial, судя по макету в Figma.
+Однако в свойствах там указано что там fira sans размеров 16,2. Такой и поставил.
+Но он не совпадает с скриншотом в макете.*/
+
 
 .content__video-card-description-container {
   width: 50%;
+  margin-top: 3px;
 }
 
 .content__video-card-description {
@@ -233,9 +146,10 @@ ol {
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 16.2px;
   font-weight: normal;
-  line-height: 16px;
+  line-height: 26px;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
 }
 
 .content__card-link {
@@ -265,6 +179,118 @@ ol {
   padding: 3px 3px;
 }
 
+
+.result__video-container {
+  display: flex;
+  position: relative;
+  width: 711px;
+  height: 402px;
+}
+
+.result__video {
+  position: relative;
+  width: 100%;
+  object-fit:fill;
+  padding-bottom: 16px;
+}
+
+
+.search-form {
+  display: flex;
+  width: 711px;
+  height: 54px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  border: none;
+  width: 224px;
+  padding: 0;
+}
+
+.search-form__fieldset-title {
+  display: block;
+  font-weight: normal;
+  font-size: 18px;
+  padding-top: 0px;
+  padding-bottom: 7px;
+}
+
+.search-form__time-fieldset {
+  margin-left: 13px;
+}
+
+.search-form__textfield {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  cursor: text;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
+  padding: 0;
+  
+}
+
+.search-form__textfield:hover {
+  text-decoration: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+  width: fit-content;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-form__label-text:hover {
+  text-decoration: underline;
+}
+
+.search-form__pseudo-checkbox {
+  padding: 1px;
+  margin-right: 5px;
+  height: 19px;
+  width: 19px;
+  outline: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-form__submit-button {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 194px;
+  height: 34px;
+}
+
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -273,6 +299,10 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.search-form__pseudo-checkbox[type="checkbox"]:checked {
+  opacity: 1;
 }
 
 .button {
@@ -296,11 +326,6 @@ ol {
   outline: 1px solid #fff;
 }
 
-.search-form__submit-button {
-  width: 194px;
-  height: 34px;
-  align-self: flex-end;
-}
 
 .more-button {
   width: 100%;
