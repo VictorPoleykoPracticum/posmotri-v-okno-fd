@@ -125,12 +125,11 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 30px;
+  padding: 0;
 }
 
 .content__video-card-description-container {
   width: 50%;
-  margin-top: 3px;
 }
 
 .content__video-card-description {
@@ -139,16 +138,10 @@ ol {
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 16.2px;
+  font-size: 18px;
   font-weight: normal;
-  line-height: 26px;
+  line-height: 16.2px;
   font-family: "Fira Sans Condensed", "Arial", sans-serif;
-  word-spacing: 60%;
-  /*Шрифт в описании карточки явно не Fira Sans Condensed, 
-  а Arial, судя по макету в Figma.
-  Однако в свойствах макета указано что там Fira Sans Condensed размера 16,2px. 
-  Такой и поставил. Но он не совпадает с скриншотом в макете.
-  Или Figma/Chrome неправильно отображает шрифты*/
 }
 
 .content__card-link {
@@ -175,7 +168,7 @@ ol {
 }
 
 .content__list-item {
-  padding: 3px 3px;
+  padding: 2px;
 }
 
 .result__video-container {
